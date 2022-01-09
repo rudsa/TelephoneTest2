@@ -2,15 +2,25 @@ package module;
 
 public class TelephoneDisplay implements Display{
 
+    private String contents = "";
 
-
-    @Override
-    public void show() {
-
+    public void setContents(String contents){
+        this.contents = contents;
+        show();
     }
 
     @Override
-    public void clean() {
+    public void show() {
+        System.out.println("********************");
+        System.out.println(this.contents);
+        System.out.println("********************");
+    }
 
+    @Override
+    public void clear() {
+        this.contents = "";
+        System.out.println("********************");
+        System.out.println("Display Clear");
+        System.out.println("********************");
     }
 }
