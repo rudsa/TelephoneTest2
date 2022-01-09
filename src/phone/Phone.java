@@ -17,4 +17,8 @@ public class Phone {
         TelephoneButtonPress telButtonPress = new TelephoneButtonPress();
         this.pressNumber = telButtonPress.pressButton(pressNumber);
     }
+
+    public String getPressNumber() {
+        return this.pressNumber;
+    }
 }

@@ -18,7 +18,9 @@ public class PhoneMain {
                 Phone phone = new Phone();
                 phone.pressButton(pressNumber);
                 if(phone.numberChecker()){
-
+                    TelephoneDisplay telDisplay = new TelephoneDisplay();
+                    telDisplay.setContents(phone.getPressNumber());
+                    telDisplay.show();
                 }else{
                     System.out.println("You Entered An Incorrect Phone Number.");
                 }
