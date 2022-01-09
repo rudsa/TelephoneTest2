@@ -2,15 +2,19 @@ package module;
 
 public class TelephoneConnector implements Connector{
 
-    private boolean power = false;
+    private boolean connectState = false;
 
     @Override
     public void connect() {
-        this.power = true;
+         this.connectState = true;
     }
 
     @Override
     public void disconnect() {
-        this.power = false;
+         this.connectState = false;
+    }
+
+    public boolean isConnectState() {
+        return this.connectState;
     }
 }

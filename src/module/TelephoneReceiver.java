@@ -1,8 +1,6 @@
 package module;
 
-import java.util.ArrayList;
-
-public class TelephoneReciever implements Sound{
+public class TelephoneReceiver implements Sound{
 
     @Override
     public void sound() {

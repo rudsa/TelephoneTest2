@@ -1,7 +1,13 @@
 package module;
 
 public class TelephoneHandset {
-    public void raiseHandset(){
 
+    private boolean handsetState = false;
+
+    public void pickUpHandset(){
+        this.handsetState = true;
+    }
+    public void putDownHandset(){
+        this.handsetState = false;
     }
 }

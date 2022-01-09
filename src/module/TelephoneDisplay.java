@@ -20,7 +20,7 @@ public class TelephoneDisplay implements Display{
     public void clear() {
         this.contents = "";
         System.out.println("********************");
-        System.out.println("Display Clear");
+        System.out.println("Display Clear" + this.contents);
         System.out.println("********************");
     }
 }
