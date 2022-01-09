@@ -16,7 +16,9 @@ public class PhoneMain {
                 Scanner scan = new Scanner(System.in);
                 String pressNumber = scan.next();
                 Phone phone = new Phone();
-                phone.pressButton();
+                phone.numberChecker(pressNumber);
+                System.out.println(phone.getChecker());
+//                phone.pressButton();
             }else{
                 System.out.println("Please Pickup Handset");
             }
