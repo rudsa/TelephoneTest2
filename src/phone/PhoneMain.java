@@ -16,9 +16,12 @@ public class PhoneMain {
                 Scanner scan = new Scanner(System.in);
                 String pressNumber = scan.next();
                 Phone phone = new Phone();
-                phone.numberChecker(pressNumber);
-                System.out.println(phone.getChecker());
-//                phone.pressButton();
+                phone.pressButton(pressNumber);
+                if(phone.numberChecker()){
+
+                }else{
+                    System.out.println("You Entered An Incorrect Phone Number.");
+                }
             }else{
                 System.out.println("Please Pickup Handset");
             }

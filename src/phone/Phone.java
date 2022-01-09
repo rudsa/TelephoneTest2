@@ -6,26 +6,15 @@ import module.TelephoneButtons;
 
 public class Phone {
 
-    private String number;
-    private boolean checker = false;
+    private String pressNumber = "";
 
-    public void numberChecker(String number){
-        this.number = number;
+    public boolean numberChecker(){
         TelephoneNumberChecker telNumChecker = new TelephoneNumberChecker();
-        telNumChecker.setTelNumber(this.number);
-        this.checker = telNumChecker.telAreaNumberChecker();
+        return telNumChecker.telAreaNumberChecker(this.pressNumber);
     }
 
-    public void pressButton(){
+    public void pressButton(String pressNumber){
         TelephoneButtonPress telButtonPress = new TelephoneButtonPress();
-        if(this.checker){
-
-        }else{
-
-        }
-    }
-
-    public boolean getChecker(){
-        return this.checker;
+        this.pressNumber = telButtonPress.pressButton(pressNumber);
     }
 }
