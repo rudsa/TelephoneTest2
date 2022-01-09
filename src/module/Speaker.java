@@ -1,5 +1,5 @@
 package module;
 
-public interface Sound {
+public interface Speaker {
     public void sound();
 }

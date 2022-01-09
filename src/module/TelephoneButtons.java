@@ -21,6 +21,6 @@ public enum TelephoneButtons {
     }
 
     public String getButtonNum(){
-        return buttonNum;
+        return this.buttonNum;
     }
 }

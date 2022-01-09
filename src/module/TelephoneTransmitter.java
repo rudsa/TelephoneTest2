@@ -1,4 +1,5 @@
 package module;
 
-public class TelephoneTransmitter {
+public interface TelephoneTransmitter {
+    public void transmitter();
 }

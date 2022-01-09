@@ -1,9 +1,5 @@
 package module;
 
-public class TelephoneReceiver implements Sound{
-
-    @Override
-    public void sound() {
-        System.out.println("Blah Blah");
-    }
+public interface TelephoneReceiver extends Speaker {
+    public void receive();
 }

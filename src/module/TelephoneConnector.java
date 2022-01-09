@@ -1,8 +1,10 @@
 package module;
 
+import java.util.Random;
+
 public class TelephoneConnector implements Connector{
 
-    private boolean connectState = false;
+    private boolean connectState = true;
 
     @Override
     public void connect() {
@@ -17,4 +19,5 @@ public class TelephoneConnector implements Connector{
     public boolean isConnectState() {
         return this.connectState;
     }
+
 }

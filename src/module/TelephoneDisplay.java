@@ -6,7 +6,6 @@ public class TelephoneDisplay implements Display{
 
     public void setContents(String contents){
         this.contents = contents;
-        show();
     }
 
     @Override
@@ -16,7 +15,6 @@ public class TelephoneDisplay implements Display{
         System.out.println("********************");
     }
 
-    @Override
     public void clear() {
         this.contents = "";
         System.out.println("********************");
