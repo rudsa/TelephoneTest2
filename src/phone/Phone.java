@@ -2,11 +2,28 @@ package phone;
 
 import action.TelephoneButtonPress;
 import action.TelephoneNumberChecker;
+import module.Receiver;
 import module.TelephoneButtons;
+import module.TelephoneSpeaker;
 
-public class Phone {
+import java.util.Random;
+
+public class Phone implements Receiver {
 
     private String pressNumber = "";
+
+
+    @Override
+    public boolean signal() {
+        Random random = new Random();
+        return random.nextBoolean();
+    }
+
+    @Override
+    public void receive() {
+        TelephoneSpeaker telSpeaker = new TelephoneSpeaker();
+        telSpeaker.sound();
+    }
 
     public boolean numberChecker(){
         TelephoneNumberChecker telNumChecker = new TelephoneNumberChecker();

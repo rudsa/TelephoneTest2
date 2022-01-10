@@ -1,5 +1,5 @@
 package module;
 
-public interface TelephoneTransmitter {
-    public void transmitter();
+public interface TelephoneTransmitter extends Transmitter {
+    public void speak();
 }
