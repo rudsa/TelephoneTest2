@@ -3,9 +3,8 @@ package module;
 import java.util.Random;
 import java.util.Scanner;
 
-public class TelephoneHandset implements Receiver, Speaker, TelephoneTransmitter{
+public class TelephoneHandset implements Speaker, TelephoneTransmitter{
 
-    private boolean receiveState = false;
     private boolean handsetState = false;
 
     public void pickUpHandset(){
@@ -23,21 +22,9 @@ public class TelephoneHandset implements Receiver, Speaker, TelephoneTransmitter
         return this.handsetState;
     }
 
-
-    @Override
-    public boolean signal() {
-        Random random = new Random();
-        return random.nextBoolean();
-    }
-
-    @Override
-    public void receive() {
-
-    }
-
     @Override
     public void sound() {
-        System.out.println("Receiver : Hello Kim");
+        System.out.println("Kim : Hello");
     }
 
     @Override
@@ -51,6 +38,7 @@ public class TelephoneHandset implements Receiver, Speaker, TelephoneTransmitter
     public void speak() {
         if(isHandsetState()){
             Scanner scan = new Scanner(System.in);
+            System.out.print("Lee : ");
             scan.next();
             transmitter();
         }

@@ -3,8 +3,7 @@ package phone;
 import module.TelephoneConnector;
 import module.TelephoneDisplay;
 import module.TelephoneHandset;
-
-import java.util.Scanner;
+import module.TelephoneSpeaker;
 
 public class PhoneMain {
     public static void main(String[] args) {
@@ -12,32 +11,32 @@ public class PhoneMain {
         if(telConnector.isConnectState()){
             TelephoneHandset telHandset = new TelephoneHandset();
                 telHandset.randomHandset();
-            if(telHandset.isHandsetState()){
-                Scanner scan = new Scanner(System.in);
-                System.out.print("Number : ");
-                String pressNumber = scan.next();
                 Phone phone = new Phone();
-                phone.pressButton(pressNumber);
+            if(telHandset.isHandsetState()){
+                phone.pressButton();
                 if(phone.numberChecker()){
                     TelephoneDisplay telDisplay = new TelephoneDisplay();
                     telDisplay.setContents(phone.getPressNumber());
                     telDisplay.show();
-                    if(telHandset.signal()){
-
+                    if(phone.signal()){
+                        telHandset.speak();
+                        telHandset.sound();
+                    }else {
+                        System.out.println("I can't answer the phone, please call me again next time");
                     }
                 }else{
                     System.out.println("You Entered An Incorrect Phone Number.");
                 }
             }else{
-                Phone phone = new Phone();
                 if(phone.signal()){
-                    phone.receive();
+                    TelephoneSpeaker telSpeaker = new TelephoneSpeaker();
+                    telSpeaker.sound();
                     telHandset.pickUpHandset();
                     telHandset.sound();
                     telHandset.speak();
                     telHandset.putDownHandset();
                 }else{
-                System.out.println("Please Pickup Handset");
+                    System.out.println("Please Pickup Handset");
                 }
             }
         }else{
